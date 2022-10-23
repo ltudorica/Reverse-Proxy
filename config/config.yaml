@@ -1,0 +1,13 @@
+proxy:
+  listen:
+    address: "127.0.0.1"
+    port: 8080
+    # lbPolicy: "ROUND_ROBIN"
+    lbPolicy: "RANDOM"
+  services:
+    - name: my-service
+      domain: localhost
+      hosts:
+        - URL: "http://localhost:8081"
+        - URL: "http://localhost:8082"
+        - URL: "http://localhost:8083"
