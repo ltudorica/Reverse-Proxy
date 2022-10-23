@@ -10,6 +10,7 @@ Requests are load-balanced between the instances of an upstream service and it s
 ## Getting started
 
 ### Layout
+```tree
 ├───config
 └───pkg
     ├───lbPolicy
@@ -17,6 +18,7 @@ Requests are load-balanced between the instances of an upstream service and it s
     └───server
         ├───routes
         └───utils
+```
 
 ### Prerequisites
 * go
