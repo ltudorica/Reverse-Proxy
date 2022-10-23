@@ -51,3 +51,12 @@ Requests are load-balanced between the instances of an upstream service and it s
 docker run reverse-proxy-app
 ```
 -> Application will start on port 8080
+
+### Test the app
+We can start 3 local services on ports 8081, 8082, 8083 according the config.yaml file. 
+Python must be installed (https://www.python.org/downloads/) - use the following command for starting the upstream services for test:
+```sh
+py -m http.server --bind localhost <port>  
+```
+
+The file can be also modified with other services in use
