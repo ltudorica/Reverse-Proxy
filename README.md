@@ -30,7 +30,7 @@ Requests are load-balanced between the instances of an upstream service and it s
    ```sh
    git clone https://github.com/ltudorica/Reverse-Proxy.git 
    ```
-2. Update config.yaml for the desired load balancing strategy
+2. Update config.yaml for the desired load balancing strategy - RANDOM or ROUND_ROBIN
 3. Run the app
    ```sh
    go run main.go
@@ -41,7 +41,7 @@ Requests are load-balanced between the instances of an upstream service and it s
    ```sh
    git clone https://github.com/ltudorica/Reverse-Proxy.git 
    ```
-2. Update config.yaml for the desired load balancing strategy
+2. Update config.yaml for the desired load balancing strategy- RANDOM or ROUND_ROBIN
 3. Build the image
    ```sh
    docker build --tag reverse-proxy-app .
