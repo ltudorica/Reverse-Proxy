@@ -27,7 +27,8 @@ Requests are load-balanced between the instances of an upstream service and it s
   ```sh
   https://go.dev/doc/install
   ```
-### Local build using an IDE
+### Build
+## Using an IDE
 1. Clone the repo
    ```sh
    git clone https://github.com/ltudorica/Reverse-Proxy.git 
@@ -38,7 +39,7 @@ Requests are load-balanced between the instances of an upstream service and it s
    go run main.go
    ```
    
-### Build using docker
+## Using docker
 1. Clone the repo
    ```sh
    git clone https://github.com/ltudorica/Reverse-Proxy.git 
@@ -62,3 +63,5 @@ py -m http.server --bind localhost <port>
 ```
 
 The file can be also modified with other services in use
+
+Send a request to the reverse-proxy and this will be redirected depending on availability & load balancing strategy
