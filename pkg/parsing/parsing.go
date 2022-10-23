@@ -36,21 +36,17 @@ type Config struct {
 
 func GetProxy() Proxy {
 	var config Config
-	// Load the file; returns []byte
 	f, err := os.ReadFile(filepath.Join("./config/", "config.yaml"))
 
 	if err != nil {
 		log.Fatal(err)
 	}
-	// Create an empty Config to be are target of unmarshalling
 	var raw interface{}
 
-	// Unmarshal our input YAML file into empty interface
 	if err := yaml.Unmarshal(f, &raw); err != nil {
 		log.Fatal(err)
 	}
 
-	// Use mapstructure to convert our interface{} to Car (var c)
 	decoder, _ := mapstructure.NewDecoder(&mapstructure.DecoderConfig{WeaklyTypedInput: true, Result: &config})
 	if err := decoder.Decode(raw); err != nil {
 		log.Fatal(err)
@@ -86,29 +82,3 @@ func GetServiceDomain(i int) string {
 func GetHostsFromService(i int) []Host {
 	return GetService(i).Host
 }
-
-// func PrintStuff() {
-// 	// Load the file; returns []byte
-// 	f, err := os.ReadFile(filepath.Join("./config/", "config.yaml"))
-
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	// Create an empty Config to be are target of unmarshalling
-// 	var c Config
-// 	var raw interface{}
-
-// 	// Unmarshal our input YAML file into empty interface
-// 	if err := yaml.Unmarshal(f, &raw); err != nil {
-// 		log.Fatal(err)
-// 	}
-
-// 	// Use mapstructure to convert our interface{} to Car (var c)
-// 	decoder, _ := mapstructure.NewDecoder(&mapstructure.DecoderConfig{WeaklyTypedInput: true, Result: &c})
-// 	if err := decoder.Decode(raw); err != nil {
-// 		log.Fatal(err)
-// 	}
-
-// 	// Print out the new struct
-// 	fmt.Printf("%+v\n", c)
-// }
