@@ -64,4 +64,4 @@ py -m http.server --bind localhost <port>
 
 The file can be also modified with other services in use
 
-Send a request to the reverse-proxy and this will be redirected depending on availability & load balancing strategy
+Send more requests to the reverse-proxy and these will be redirected depending on availability & load balancing strategy
